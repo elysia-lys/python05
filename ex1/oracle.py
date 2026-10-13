@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 def main() -> None:
     load_dotenv()
 
-    print("ORACLE STATUS: Consulting the configuration...")
+    print("ORACLE STATUS: Consulting the configuration...\n")
 
     mode = os.getenv("MATRIX_MODE", "development")
     database_url = os.getenv("DATABASE_URL")
     api_key = os.getenv("API_KEY")
-    log_level = os.getenv("LOG_LEVEL", "DEBUG")
+    log_level = os.getenv("LOG_LEVEL")
     zion_endpoint = os.getenv("ZION_ENDPOINT")
 
     print("Configuration loaded:")
@@ -40,14 +40,7 @@ def main() -> None:
     print("Configuration security check:")
     print("[OK] No hardcoded secrets detected")
     print("[OK] .env file should be ignored by git")
-    print("[OK] Production overrides available")
-
-    if mode == "development":
-        print("Development mode: Debugging enabled")
-    elif mode == "production":
-        print("Production mode: Debugging disabled")
-    else:
-        print("WARNING: Unknown MATRIX_MODE value")
+    print("[OK] Production overrides available\n")
 
     print("The Oracle sees all configurations.")
 
