@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "laboratory"
+version = "0.1.0"
+description = "Python dependency management exercise"
+authors = ["Student"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+pandas = ">=2.1.0,<3.0.0"
+#numpy = ">=1.25.0,<3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
