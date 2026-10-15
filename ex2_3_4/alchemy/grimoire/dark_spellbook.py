@@ -1,0 +1,13 @@
+from .dark_validator import dark_validate_ingredients  # noqa: F401
+
+
+def dark_spell_allowed_ingredients() -> list[str]:
+    return ["bats", "frogs", "arsenic", "eyeball"]
+
+
+def dark_spell_record(spell_name: str, ingredients: str) -> str:
+    result = dark_validate_ingredients(ingredients)
+
+    if "VALID" in result:
+        return (f"Spell recorded: {spell_name} ({result})")
+    return (f"Spell rejected: {spell_name} ({result})")
